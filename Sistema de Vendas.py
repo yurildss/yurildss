@@ -1,4 +1,13 @@
 filmes=[] # matriz onde serão adicionados os filmes e suas informações
+
+temp=0
+def varrerMatriz(n):
+    cod = int(input("Digite o Codigo do filmes que deseja alterar: "))
+    for i in range(0, 2):  # os codigos estao na posiçao [i][0]
+        if filmes[i][n] == cod:
+            temp=i
+            return temp
+
 while True:
     temp=0
     n=int(input("""O que gostaria de fazer ?
@@ -28,13 +37,9 @@ while True:
             new_nome=input("Digite um novo nome: ")
             filmes[temp][1]=new_nome
 
-
     if n == 0:
-        cod = int(input("Digite o Codigo do filmes que deseja alterar: "))
-        for i in range(0,2): #os codigos estao na posiçao [i][0]
-            if filmes[i][0] == cod:
-                temp = i
 
+        varrerMatriz(8)
 
     if n == 3: #se o numero digitado for 3 iremos começar a adicionar os valores
         while True:
@@ -63,3 +68,7 @@ while True:
                     dados.append(montante)
                     dados.append(codigo)
                 filmes.append(dados)
+
+
+
+print(filmes)
